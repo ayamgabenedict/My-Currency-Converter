@@ -3,7 +3,7 @@
 ## What is this project about?
 
 This Currency Converter project offers users the opportunity to convert from one currency to the other.
-This project is built with [React](https://react.dev) JS library and the [Vite](https://vitejs.dev), using [Tailwindcss](https://tailwindcss.com) for the styles.
+This project is built with [React](https://react.dev) JS library and the [Vite](https://vitejs.dev) bundler, using [Tailwindcss](https://tailwindcss.com) for the styles.
 
 # Getting Started
 
@@ -49,14 +49,16 @@ npm run dev
 ## Contributions
 
 1. Refactored the code for optimization such as:
+   1. Built a custom hook `useCurrencyInfo` to handle currency information.
    1. used the `useMemo` hook to memoize the <b>formattedClassName</b> and <b>currencyOptionsList</b>, thus preventing unnecessary re-renders when their dependencies stayed the same.
-   2. Used the `useState` hook to manage the <b>amount</b> state locally for better performance and control.
-   3. Combined <b>input</b> value handling and `onAmountChange` within `handleAmountChange` for a more concise approach.
-   4. Used a ternary operator to display an empty string for `amount` when it equalled zero, thus streamlining conditional rendering.
-   5. Checked for the existence of `onAmountChange` and `onCurrencyChange` before invoking them thereby preventing potential errors if those functions were not provided.
-2. Added the "Reset" button
+   1. Used the `useState` hook to manage the <b>amount</b> state locally for better performance and control.
+   1. Combined <b>input</b> value handling and `onAmountChange` within `handleAmountChange` for a more concise approach.
+   1. Used a ternary operator to display an empty string for `amount` when it equalled zero, thus streamlining conditional rendering.
+   1. Checked for the existence of `onAmountChange` and `onCurrencyChange` before invoking them thereby preventing potential errors had those functions not existed.
+   1. Added <b>error handling mechanism</b> to gracefully handle errors and give some user feedback.
+2. Added the "Reset" button so that the user doesn't have to use the browser's refresh button
 3. Improved CSS for more UX 😊😊😊
 
 ## Acknowledgements
 
-- [Hitesh Choudhary](https://hiteshchoudhary.com/) The project was developed as part of a React Video tutorial on [Youtube](https://www.youtube.com/watch?v=4DqAvWonPAg).
+- [Hitesh Choudhary](https://hiteshchoudhary.com/) This project was developed as part of a React Video tutorial on [Youtube](https://www.youtube.com/watch?v=4DqAvWonPAg).

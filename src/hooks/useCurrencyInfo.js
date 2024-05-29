@@ -26,14 +26,12 @@ function useCurrencyInfo(currency){
                     if (!fallbackResponse.ok){
                         throw new Error(`Could not fetch data from fallback  resource`)
                     }
-    
                     const fallbackData = await fallbackResponse.json()
                     setData(fallbackData[currency])
                 }catch(fallbackError){
                     console.error("Error fetching currency information:", fallbackError)
                 }
-            }
-           
+            }  
         }
     
         fetchData()
@@ -42,3 +40,5 @@ function useCurrencyInfo(currency){
 }
 
 export default useCurrencyInfo
+
+

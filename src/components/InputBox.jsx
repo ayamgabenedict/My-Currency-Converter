@@ -1,9 +1,6 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import  React, {  useState, useMemo } from 'react'
 
 const InputBox = ({
-  
   label,
   amount,
   onAmountChange,
@@ -36,6 +33,7 @@ const InputBox = ({
       onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
       disabled={currencyDisabled}
     >
+      
       {currencyOptions.map((currency) => (
         <option key={currency} value={currency} className="text-gray-800">
           {currency}
@@ -57,7 +55,7 @@ const InputBox = ({
                 disabled={amountDisabled}
                 value={amount || ''}
                 onChange={handleAmountChange}
-                />
+              />
             {errorMessage && (
             <p id="error-message" role="alert" className="text-red-500 text-xs mt-1">
               {errorMessage}
